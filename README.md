@@ -1,16 +1,9 @@
 # vertex-forecast-poc
 assets needed to successfully pilot Vertex Forecast for enterprise demand forecasting use cases
 
-## using this repository
+## Getting Started
 
-<details>
-    <summary> <strong>packages</strong></summary>
-
-* [Google Cloud Pipeline Components](https://github.com/kubeflow/pipelines/tree/master/components/google-cloud) provides predefined [KFP](https://www.kubeflow.org/docs/components/pipelines/) components that can be run on Google Cloud Vertex AI Pipelines and other KFP-conformant pipeline execution backends. You can compose the components together into pipelines using the [Kubeflow Pipelines SDK](https://pypi.org/project/kfp/)
-
-* [Vertex AI SDK for Python](https://github.com/googleapis/python-aiplatform/tree/main/google/cloud/aiplatform)
-
-</details>
+First, edit [env_config.py](env_config.py)
 
 <details>
     <summary> <strong>environment setup with Poetry</strong></summary>
@@ -28,34 +21,13 @@ conda install pip
 pip install -U poetry ipykernel packaging
 ```
 
-2. initialize `poetry` and define dependencies
+2. Install the required Python packages using Poetry:
     
 ```bash
-export DIR_NAME=poetry_dir
-mkdir $DIR_NAME
-cd $DIR_NAME
-
-poetry init 
-
-poetry add google-cloud-aiplatform@1.85.0
-poetry add google-cloud-pipeline-components@2.19.0
-poetry add kfp@2.10.1
-poetry add google-cloud-bigquery
-poetry add pandas
-poetry add numpy
-poetry add matplotlib
-poetry add db-dtypes
-poetry add plotly
-poetry add nbformat
+poetry install
 ```
 
-3. Update `pyproject.toml`
-    
-    - Open `pyproject.toml`
-    - Find this line: `requires-python = ">=3.10"`
-    - Add a max version to create a range: `requires-python = ">=3.10, <3.13"`
-    
-4. Add conda kernel
+3. Add conda kernel for Wokbench Instance notebook
     
 ```bash
 DL_ANACONDA_ENV_HOME="${DL_ANACONDA_HOME}/envs/$ENV_NAME"
@@ -64,7 +36,7 @@ echo $DL_ANACONDA_ENV_HOME
 python -m ipykernel install --prefix "${DL_ANACONDA_ENV_HOME}" --name $ENV_NAME --display-name $ENV_DISPLAY
 ```
 
-5. After reloading the Workbench instance (`ctrl + r`), you should see `$ENV_DISPLAY` available as a notebook kernel
+4. After reloading the Workbench instance (`ctrl + r`), you should see `$ENV_DISPLAY` available as a notebook kernel
 
 </details>
 
