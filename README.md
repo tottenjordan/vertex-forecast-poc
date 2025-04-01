@@ -47,9 +47,9 @@ poetry add nbformat
 
 3. Update `pyproject.toml`
     
-  * Open `pyproject.toml`
-  * Find this line: `requires-python = ">=3.10"`
-  * Add a max version to create a range: `requires-python = ">=3.10, <3.13"`
+  - Open `pyproject.toml`
+  - Find this line: `requires-python = ">=3.10"`
+  - Add a max version to create a range: `requires-python = ">=3.10, <3.13"`
     
 4. Add conda kernel
     
@@ -64,7 +64,8 @@ python -m ipykernel install --prefix "${DL_ANACONDA_ENV_HOME}" --name $ENV_NAME 
 
 </details>
 
-### Vertex Forecast parameters
+<details>
+    <summary> <strong>Vertex Forecast parameters</strong></summary>
 
 > see [Training parameters for forecast models](https://cloud.google.com/vertex-ai/docs/tabular-data/forecasting-parameters)
 
@@ -96,3 +97,4 @@ python -m ipykernel install --prefix "${DL_ANACONDA_ENV_HOME}" --name $ENV_NAME 
 `FORECAST_HORIZON_LENGTH` is the number of rows to forecast into the future beyond the test region
 * This is in the units of `FORECAST_GRANULARITY`
 * This needs to be set as an input to the forecast method
+</details>
