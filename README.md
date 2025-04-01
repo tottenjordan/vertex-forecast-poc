@@ -51,9 +51,9 @@ poetry add nbformat
 
 3. Update `pyproject.toml`
     
-  - Open `pyproject.toml`
-  - Find this line: `requires-python = ">=3.10"`
-  - Add a max version to create a range: `requires-python = ">=3.10, <3.13"`
+    - Open `pyproject.toml`
+    - Find this line: `requires-python = ">=3.10"`
+    - Add a max version to create a range: `requires-python = ">=3.10, <3.13"`
     
 4. Add conda kernel
     
