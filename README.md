@@ -3,10 +3,11 @@ assets needed to successfully pilot Vertex Forecast for enterprise demand foreca
 
 ## using this repository
 
-**packages**
+<details>
+    <summary> <strong>packages</strong></summary>
 * [Google Cloud Pipeline Components](https://github.com/kubeflow/pipelines/tree/master/components/google-cloud)(GCPC) provides predefined [KFP](https://www.kubeflow.org/docs/components/pipelines/) components that can be run on Google Cloud Vertex AI Pipelines and other KFP-conformant pipeline execution backends. You can compose the components together into pipelines using the [Kubeflow Pipelines SDK](https://pypi.org/project/kfp/).
 * [Vertex AI SDK for Python](https://github.com/googleapis/python-aiplatform/tree/main/google/cloud/aiplatform)
-
+</details>
 
 <details>
     <summary> <strong>environment setup with Poetry</strong></summary>
