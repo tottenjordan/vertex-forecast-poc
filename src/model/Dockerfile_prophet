@@ -1,0 +1,11 @@
+
+FROM gcr.io/deeplearning-platform-release/base-cpu
+WORKDIR /
+RUN pip install --upgrade pip
+RUN pip install pandas pystan prophet pandas-gbq google-cloud-bigquery pyarrow tqdm
+
+## Copies the trainer code to the docker image
+COPY fit /fit
+
+## Sets up the entry point to invoke the trainer
+ENTRYPOINT ["python", "-m", "fit.prophet"]
