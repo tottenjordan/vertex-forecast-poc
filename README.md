@@ -24,6 +24,9 @@ pip install -U poetry ipykernel packaging
 2. Install the required Python packages using Poetry:
     
 ```bash
+export DIR_NAME=poetry_dir
+cd $DIR_NAME
+
 poetry install
 ```
 
