@@ -74,3 +74,9 @@ python -m ipykernel install --prefix "${DL_ANACONDA_ENV_HOME}" --name $ENV_NAME 
 * This is in the units of `FORECAST_GRANULARITY`
 * This needs to be set as an input to the forecast method
 </details>
+
+### Multicontender vs Champion pipeline
+
+<img src='imgs/vf_champ_pipe_dag.png'>
+
+see [02_vf_pipelines.ipynb](notebooks/02_vf_pipelines.ipynb) to create pipeline
