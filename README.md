@@ -153,19 +153,18 @@ python -m ipykernel install --prefix "${DL_ANACONDA_ENV_HOME}" --name $ENV_NAME 
 >```
 
 
-## Towards Business Friendly and Interpretable Metrics for Demand Forecasting
+## Business Friendly and Interpretable Metrics for Demand Forecasting
 
 
-1. Choosing appropriate evaluation metrics is one of the most important yet error-prone tasks for time series forecasting...
+Choosing appropriate evaluation metrics is one of the most important yet error-prone tasks for time series forecasting...
 
-* It is essential to check the distribution of the prediction target by plotting a histogram at the intended spatial and temporal granularity. Check whether the distribution of the target is sparse or asymmetric
+  * check the distribution of the prediction target by plotting a histogram at the intended spatial and temporal granularity
+  * check whether the distribution of the target is sparse or asymmetric
+  * When the distribution of prediction targets is sparse or asymmetric, it is inappropriate to use `wMAPE`, `MAE`, or `MASE` as a primary optimization criteria. 
+  * `RMSE` and `WRMSSE` can be used as a primary optimization criteria despite the distribution of the prediction targets  
 
-* When the distribution of prediction targets is sparse or asymmetric, it is inappropriate to use `wMAPE`, `MAE`, or `MASE` as a primary optimization criteria. 
 
-* `RMSE` and `WRMSSE` can be used as a primary optimization criteria despite the distribution of the prediction targets  
-
-
-2. Characteristics of high quality evaluation metrics...
+Characteristics of high quality evaluation metrics...
 
 * **Interpretability**: Results should be easily interpreted by humans (i.e. `RMSE` and `MAE` are less ideal)
 * **Calculation safety**: The metric should handle zero actuals properly (i.e. `MAPE` in its original form is less ideal)
@@ -177,18 +176,19 @@ python -m ipykernel install --prefix "${DL_ANACONDA_ENV_HOME}" --name $ENV_NAME 
 * **Comparability**: Optionally, the scores from different projects can be roughly compared
 
 
-3. Common evaluation metrics in forecasting can be roughly organized into three groups...
+Common evaluation metrics in forecasting can be roughly organized into three groups...
 
-* scale-dependent metrics
-* percentage metrics
-* scale-free metrics
+  * scale-dependent metrics
+  * percentage metrics
+  * scale-free metrics
+ 
 
-### Scale-Dependent Metrics
+#### Scale-Dependent Metrics
 
 * Mean Absolute Error (`MAE`) and Rooted Mean Square Error (`RMSE`), are two most widely used scale-dependent metrics for both forecasting and regression tasks
 * Two major limitations of scale-dependent metrics are that a) the values are not human-interpretable; and that b) values from different time series or projects are not directly comparable
 
-### Percentage Metrics
+#### Percentage Metrics
 
 The family of *percentage metrics*, such as **Mean Absolute Percentage Error** (`MAPE`), **Symmetric Mean Absolute Percentage Error** (`sMAPE`), and **Weighted Mean Absolute Percentage Error** (`wMAPE`) are widely used to compare forecasting performance due to advantages such as scale independence and interpretability
 
@@ -201,7 +201,7 @@ The family of *percentage metrics*, such as **Mean Absolute Percentage Error** (
 > *Note: these "limitations" can be advantages depending on the application. What is appropriate for the business? Are absolute errors important or are relative errors important?*
 
 
-### Scale-free Metrics
+#### Scale-free Metrics
 
 Because of the known limitations in scale-dependent metrics and percentage metrics, Hyndman et al [1] proposed a scale-free metric named Mean Absolute Scaled Error (MASE)
 * `MASE` is the precursor that inspired `WRMSSE` used in the [M5 forecasting competition](https://www.kaggle.com/c/m5-forecasting-accuracy)
